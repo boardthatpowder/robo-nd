@@ -1,3 +1,11 @@
 {
-	"folders": []
+	"folders": [
+		{
+			"path": "project1"
+		},
+		{
+			"path": "catkin_ws"
+		}
+	],
+	"settings": {}
 }
