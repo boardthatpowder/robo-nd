@@ -25,9 +25,7 @@ void process_image_callback(const sensor_msgs::Image img)
 {
 
     int white_pixel = 255;
-    bool found_ball_left = false;
-    bool found_ball_center = false;
-    bool found_ball_right = false;
+    bool found_ball_left=false, found_ball_center=false, found_ball_right=false;
 
     // Loop through each pixel in the image and check if there's a bright white one
     // Then, identify if this pixel falls in the left, mid, or right side of the image

@@ -3,7 +3,7 @@
 <launch>
 
   <!-- Robot pose -->
-  <arg name="x" default="0"/>
+  <arg name="x" default="8"/>
   <arg name="y" default="0"/>
   <arg name="z" default="0"/>
   <arg name="roll" default="0"/>
@@ -30,7 +30,7 @@
 
 	<!-- Spawn My Robot -->
 	<node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen" 
-	  args="-urdf -param robot_description -model my_robot 
+	  args="-urdf -param robot_description -model my_robot
 	        -x $(arg x) -y $(arg y) -z $(arg z)
 	        -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 

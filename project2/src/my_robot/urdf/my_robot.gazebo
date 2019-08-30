@@ -2,28 +2,45 @@
 <robot>
 
   <gazebo>
-    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
-      <legacyMode>false</legacyMode>
-      <alwaysOn>true</alwaysOn>
-      <updateRate>10</updateRate>
-      <leftJoint>left_wheel_hinge</leftJoint>
-      <rightJoint>right_wheel_hinge</rightJoint>
-      <wheelSeparation>0.4</wheelSeparation>
-      <wheelDiameter>0.2</wheelDiameter>
-      <torque>10</torque>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <broadcastTF>false</broadcastTF>
       <commandTopic>cmd_vel</commandTopic>
-      <odometryTopic>odom</odometryTopic>
+      <leftFrontJoint>base_to_wheel1</leftFrontJoint>
+      <leftRearJoint>base_to_wheel2</leftRearJoint>
       <odometryFrame>odom</odometryFrame>
+      <odometryTopic>odom</odometryTopic>
+      <rightFrontJoint>base_to_wheel3</rightFrontJoint>
+      <rightRearJoint>base_to_wheel4</rightRearJoint>
       <robotBaseFrame>robot_footprint</robotBaseFrame>
-      <publishWheelTF>false</publishWheelTF>
-      <publishWheelJointState>false</publishWheelJointState>
-      <rosDebugLevel>na</rosDebugLevel>
-      <wheelAcceleration>0</wheelAcceleration>
-      <wheelTorque>5</wheelTorque>
-      <odometrySource>world</odometrySource>
-      <publishTf>1</publishTf>
-      <publishOdomTF>true</publishOdomTF>
+      <robotNamespace>/</robotNamespace>
+      <torque>5</torque>
+      <updateRate>100</updateRate>
+      <wheelDiameter>0.16</wheelDiameter>
+      <wheelSeparation>4</wheelSeparation>
     </plugin>
+
+ <!--    <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <alwaysOn>true</alwaysOn>
+      <commandTopic>cmd_vel</commandTopic>
+      <leftJoint>left_wheel_hinge</leftJoint>
+      <legacyMode>false</legacyMode>
+      <odometryFrame>odom</odometryFrame>
+      <odometrySource>world</odometrySource>
+      <odometryTopic>odom</odometryTopic>
+      <publishOdomTF>true</publishOdomTF>
+      <publishTf>1</publishTf>
+      <publishWheelJointState>false</publishWheelJointState>
+      <publishWheelTF>false</publishWheelTF>
+      <rightJoint>right_wheel_hinge</rightJoint>
+      <robotBaseFrame>robot_footprint</robotBaseFrame>
+      <rosDebugLevel>na</rosDebugLevel>
+      <torque>10</torque>
+      <updateRate>10</updateRate>
+      <wheelAcceleration>0</wheelAcceleration>
+      <wheelDiameter>0.2</wheelDiameter>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelTorque>5</wheelTorque>
+    </plugin> -->
   </gazebo>
 
   <!-- camera -->
