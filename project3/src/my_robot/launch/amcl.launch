@@ -11,20 +11,21 @@
 		<param name="base_frame_id" value="robot_footprint"/>
 		<param name="global_frame_id" value="map"/>
 
-	    <param name="initial_pose_x" value="0.0"/>
+<!-- 	    <param name="initial_pose_x" value="0.0"/>
 	    <param name="initial_pose_y" value="0.0"/>
-	    <param name="initial_pose_a" value="0.0"/>
-	    <param name="min_particles" value="10"/>
-	    <param name="max_particles" value="100"/>
-	    <param name="update_min_d" value="0.001"/>
-	    <param name="update_min_a" value="0.004"/>
-	    <param name="transform_tolerance" value="5.0"/>
+	    <param name="initial_pose_a" value="0.0"/> -->
+	    <param name="min_particles" value="100"/>
+	    <param name="max_particles" value="2000"/>
+	    <param name="update_min_d" value="0.1"/>
+	    <param name="update_min_a" value="0.52"/>
+	    <param name="transform_tolerance" value="0.1"/>
+
 	    <param name="laser_model_type" value="likelihood_field"/>
 	    <param name="laser_min_range" value="-1.0"/>
-	    <param name="laser_max_range" value="5.0"/>
-	    <param name="laser_max_beams" value="50"/>
-	    <param name="laser_z_hit" value="0.90"/>
-    	<param name="laser_z_rand" value="0.10"/>
+	    <param name="laser_max_range" value="-1.0"/>
+	    <param name="laser_max_beams" value="30"/>
+	    <param name="laser_z_hit" value="0.95"/>
+    	<param name="laser_z_rand" value="0.1"/>
   	</node>
 
   	<!-- Move Base -->
