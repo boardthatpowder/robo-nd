@@ -1,34 +1,33 @@
 <launch>
-
-	<!-- map server  -->
+	<!-- Map Server -->
 	<arg name="map_file" default="$(find my_robot)/maps/map.yaml"/>
 	<node name="map_server" pkg="map_server" type="map_server" args="$(arg map_file)" />
 
 	<!-- AMCL Node -->
 	<node name="amcl" pkg="amcl" type="amcl" output="screen">
-
 		<remap from="scan" to="my_robot/laser/scan"/>
-
-		<!-- odometry -->
 		<param name="odom_frame_id" value="odom"/>
 		<param name="odom_model_type" value="diff-corrected"/>
 		<param name="base_frame_id" value="robot_footprint"/>
 		<param name="global_frame_id" value="map"/>
 
-	    <!-- overall -->
-	    <param name="transform_tolerance" value="5"/>  <!-- 0.1 -->
-	    <param name="min_particles" value="100"/>
-	    <param name="max_particles" value="1000"/>
 	    <param name="initial_pose_x" value="0.0"/>
 	    <param name="initial_pose_y" value="0.0"/>
-	    <param name="update_min_a" value="0.26"/>
-	    <param name="update_min_d" value="0.1"/>
+	    <param name="initial_pose_a" value="0.0"/>
+	    <param name="min_particles" value="10"/>
+	    <param name="max_particles" value="100"/>
+	    <param name="update_min_d" value="0.001"/>
+	    <param name="update_min_a" value="0.004"/>
+	    <param name="transform_tolerance" value="5.0"/>
+	    <param name="laser_model_type" value="likelihood_field"/>
+	    <param name="laser_min_range" value="-1.0"/>
+	    <param name="laser_max_range" value="5.0"/>
+	    <param name="laser_max_beams" value="50"/>
+	    <param name="laser_z_hit" value="0.90"/>
+    	<param name="laser_z_rand" value="0.10"/>
+  	</node>
 
-	    <!-- laser -->
-
-	</node>
-
-	<!-- Move Base -->
+  	<!-- Move Base -->
 	<node name="move_base" pkg="move_base" type="move_base" respawn="false" output="screen">
 		<remap from="scan" to="my_robot/laser/scan"/>
 		<param name="base_global_planner" value="navfn/NavfnROS" />
@@ -39,5 +38,4 @@
 		<rosparam file="$(find my_robot)/config/global_costmap_params.yaml" command="load" />
 		<rosparam file="$(find my_robot)/config/base_local_planner_params.yaml" command="load" />
 	</node>
-
 </launch>

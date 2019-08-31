@@ -1,6 +1,8 @@
-image: /home/workspace/project3/src/my_robot/maps/map.pgm
-resolution: 0.1   # 0.01
-origin: [-15.0, -15.0, 0.0]
+image: map.pgm
+width: 30
+height: 30
+resolution: 0.01
+origin: [15, -15, 1.57]
 occupied_thresh: 0.65
 free_thresh: 0.196
 negate: 0
