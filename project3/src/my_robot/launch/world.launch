@@ -12,6 +12,7 @@
 
   <!-- Launch other relevant files-->
   <include file="$(find my_robot)/launch/robot_description.launch"/>
+  <include file="$(find my_robot)/launch/amcl.launch"/>
 
   <!-- World File -->
   <!-- <arg name="world_file" default="$(find my_robot)/worlds/empty.world"/> -->
@@ -35,6 +36,6 @@
 	        -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 
 	<!--launch rviz-->
-	<node name="rviz" pkg="rviz" type="rviz" respawn="false"/>
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find my_robot)/project3.rviz" />
 
 </launch>
