@@ -1,0 +1,3 @@
+<launch>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find pick_objects)/../rvizConfig/navigation.rviz"/>
+</launch>

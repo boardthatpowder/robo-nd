@@ -1,0 +1,11 @@
+
+<launch>
+	<!-- pickup/dropoff config  -->
+	<param name="/my_robot/pickup/pose_pos_x" value="2.0" />
+	<param name="/my_robot/pickup/pose_pos_y" value="-1.0" />
+
+	<param name="/my_robot/dropoff/pose_pos_x" value="-4.0" />
+	<param name="/my_robot/dropoff/pose_pos_y" value="-4.0" />
+
+	<node pkg="add_markers" type="add_markers_node" name="add_markers" output="screen" />
+</launch>

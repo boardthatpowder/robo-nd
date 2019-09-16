@@ -1,0 +1,11 @@
+<launch>
+	<!-- pickup/dropoff config  -->
+	<param name="/my_robot/pickup/pose_pos_x" value="2.0" />
+	<param name="/my_robot/pickup/pose_pos_y" value="-1.0" />
+	<param name="/my_robot/pickup/pose_orient_w" value="1.0" />
+	<param name="/my_robot/dropoff/pose_pos_x" value="-4.0" />
+	<param name="/my_robot/dropoff/pose_pos_y" value="-4.0" />
+	<param name="/my_robot/dropoff/pose_orient_w" value="1.0" />
+
+	<node pkg="pick_objects" type="pick_objects_node" name="pick_objects" output="screen" />
+</launch>
